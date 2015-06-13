@@ -51,9 +51,14 @@ LOCAL_SRC_FILES := vx_interface.c \
     vx_pyramid.c \
     vx_optpyrlk.c \
     vx_scale.c \
-    vx_threshold.c
-LOCAL_C_INCLUDES := $(OPENVX_INC) $(OPENVX_TOP)/$(OPENVX_SRC)/include $(OPENVX_TOP)/$(OPENVX_SRC)/extensions/include
-LOCAL_SHARED_LIBRARIES := libdl libutils libcutils libbinder libhardware libion libgui libui libopenvx
+    vx_threshold.c \
+    vx_remap.c \
+    vx_harris.c \
+    vx_warp.c \
+    vx_fast9.c \
+
+LOCAL_C_INCLUDES := $(OPENVX_INC) $(OPENVX_TOP)/$(OPENVX_SRC)/include $(OPENVX_TOP)/$(OPENVX_SRC)/extensions/include $(OPENVX_TOP)/debug  $(OPENVX_TOP)/kernels/c_model 
+LOCAL_SHARED_LIBRARIES := libdl libutils libcutils libbinder libhardware libion libgui libui libopenvx libopenvx-c_model-lib libopenvx-debug-lib libopenvx-extras libopenvx-c_model-lib
 LOCAL_MODULE := libopenvx-c_model
 include $(BUILD_SHARED_LIBRARY)
 

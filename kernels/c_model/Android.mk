@@ -27,22 +27,30 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 LOCAL_CFLAGS := $(OPENVX_DEFS)
 LOCAL_SRC_FILES :=  c_absdiff.c \
-					c_accumulate.c \
-					c_addsub.c \
-					c_bitwise.c \
-					c_channel.c \
-					c_conv3x3.c \
-					c_convertcolor.c \
-					c_convertdepth.c \
-					c_convolve.c \
-					c_fast9.c \
-					c_filter.c \
-					c_histogram.c \
-					c_integralimage.c \
-					c_lut.c \
-					c_magnitude.c \
-					c_sobel3x3.c \
-					c_statistics.c 
+    c_accumulate.c \
+    c_addsub.c \
+    c_bitwise.c \
+    c_channel.c \
+    c_conv3x3.c \
+    c_convertcolor.c \
+    c_convertdepth.c \
+    c_convolve.c \
+    c_filter.c \
+    c_histogram.c \
+    c_integralimage.c \
+    c_lut.c \
+    c_magnitude.c \
+    c_sobel3x3.c \
+    c_statistics.c \
+    c_morphology.c \
+    c_scale.c \
+    c_warp.c \
+    c_threshold.c \
+    c_multiply.c \
+    c_phase.c \
+    c_fast9.c \
+
 LOCAL_C_INCLUDES := $(OPENVX_INC) $(OPENVX_TOP)/$(OPENVX_SRC)/include $(OPENVX_TOP)/debug
+#LOCAL_SHARED_LIBRARIES := libopenvx-c_model
 LOCAL_MODULE := libopenvx-c_model-lib
 include $(BUILD_STATIC_LIBRARY)

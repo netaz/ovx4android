@@ -27,15 +27,17 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 LOCAL_CFLAGS := $(OPENVX_DEFS)
 LOCAL_SRC_FILES := \
+	vx_array.c \
 	vx_context.c \
 	vx_convolution.c \
 	vx_delay.c \
 	vx_distribution.c \
+	vx_dot.c \
 	vx_error.c \
 	vx_graph.c \
 	vx_image.c \
+	vx_import.c \
 	vx_kernel.c \
-	vx_list.c \
 	vx_log.c \
 	vx_lut.c \
 	vx_matrix.c \
@@ -49,9 +51,15 @@ LOCAL_SRC_FILES := \
 	vx_remap.c \
 	vx_scalar.c \
 	vx_target.c \
-	vx_threshold.c
+	vx_threshold.c \
+	vx_type_pairs.c \
+	vx_xml_export.c \
+	vx_xml_import.c \
+	vx_meta_format.c \
+
+LOCAL_LDLIBS := -llog -ldl 
 LOCAL_C_INCLUDES := $(OPENVX_INC) $(OPENVX_TOP)/$(OPENVX_SRC)/include $(OPENVX_TOP)/debug
-LOCAL_WHOLE_STATIC_LIBRARIES := libopenvx-helper libopenvx-debug
+LOCAL_WHOLE_STATIC_LIBRARIES := libopenvx-helper libvx-debug # libopenvx-debug
 LOCAL_SHARED_LIBRARIES := libdl libutils libcutils libbinder libhardware libion libgui libui
 LOCAL_MODULE := libopenvx
 include $(BUILD_SHARED_LIBRARY)

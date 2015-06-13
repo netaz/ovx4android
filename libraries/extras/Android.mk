@@ -31,9 +31,13 @@ LOCAL_SRC_FILES := vx_extras_module.c \
 	vx_gradients.c \
 	vx_nonmax.c \
 	vx_harris_score.c \
-	vx_listers.c 
-LOCAL_C_INCLUDES := $(OPENVX_INC)
-LOCAL_SHARED_LIBRARIES := libdl libutils libcutils libbinder libhardware libion libgui libui libopenvx
+	vx_listers.c \
+	vx_edge_trace.c \
+	vx_norm.c \
+	vx_extras_lib.c \
+
+LOCAL_C_INCLUDES := $(OPENVX_INC) $(OPENVX_TOP)/kernels/extras
+LOCAL_SHARED_LIBRARIES := libdl libutils libcutils libbinder libhardware libion libgui libui libopenvx libopenvx-extras_k-lib 
 LOCAL_MODULE := libopenvx-extras
 include $(BUILD_SHARED_LIBRARY)
 

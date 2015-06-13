@@ -26,7 +26,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 LOCAL_CFLAGS := $(OPENVX_DEFS)
-LOCAL_SRC_FILES :=  d_file.c
+LOCAL_SRC_FILES :=  d_file.c d_copy.c
 LOCAL_C_INCLUDES := $(OPENVX_INC) $(OPENVX_TOP)/$(OPENVX_SRC)/include
 LOCAL_MODULE := libopenvx-debug_k-lib
 include $(BUILD_STATIC_LIBRARY)

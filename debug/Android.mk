@@ -28,5 +28,5 @@ LOCAL_ARM_MODE := arm
 LOCAL_CFLAGS := $(OPENVX_DEFS)
 LOCAL_SRC_FILES := vx_debug.c
 LOCAL_C_INCLUDES := $(OPENVX_INC) $(OPENVX_TOP)/debug
-LOCAL_MODULE := libopenvx-debug
+LOCAL_MODULE := libvx-debug
 include $(BUILD_STATIC_LIBRARY)

@@ -19,14 +19,21 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 
-ifeq ($(BOARD_USES_OPENVX),1)
+#ifeq ($(BOARD_USES_OPENVX),1)
+
+HOST_NUM_CORES := $(shell cat /proc/cpuinfo | grep processor | wc -l) 
 
 OPENVX_TOP := $(call my-dir)
 OPENVX_INC := $(OPENVX_TOP)/include
 OPENVX_DEFS:= -D_LITTLE_ENDIAN_ \
-			  -DEXPERIMENTAL_USE_DOT
+    -DEXPERIMENTAL_USE_DOT \
+    -DTARGET_NUM_CORES=$(HOST_NUM_CORES)
+
 OPENVX_SRC := sample
-OPENVX_DIRS := $(OPENVX_SRC) examples conformance helper debug libraries kernels tools
+#OPENVX_DIRS := $(OPENVX_SRC) examples conformance helper debug libraries kernels tools
+OPENVX_DIRS := $(OPENVX_SRC) examples helper debug libraries kernels tools
 $(foreach dir,$(OPENVX_DIRS),$(eval include $(OPENVX_TOP)/$(dir)/Android.mk))
 
-endif
+#include $(call all-subdir-makefiles)
+
+#endif
