@@ -6,11 +6,13 @@ Unfortunately, the makefiles that Khronos released do not compile for Android so
 make changes in the original makefiles and even add a couple of files.
 
 To build:
-cd <ovx4android-directory>/jni
-ndk-build NDK_PROJECT_PATH=.. APP_BUILD_SCRIPT=../Android.mk
+
+    cd <ovx4android-directory>/jni<br>
+    ndk-build NDK_PROJECT_PATH=.. APP_BUILD_SCRIPT=../Android.mk
 
 The generated libraries can be found here:
-<ovx4android-directory>/libs
+
+    <ovx4android-directory>/libs
 
 
 Enjoy!
